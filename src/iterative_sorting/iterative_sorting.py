@@ -7,7 +7,16 @@ def selection_sort(arr):
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-
+        if arr == None:
+            return arr
+        #check if array is sorted
+        #if sorted(arr) == arr:
+        if arr[i] <= arr[i + 1]:
+            return arr
+        #if array is not sorted
+        else:
+            while arr[smallest_index] < arr[i + 1]:
+                arr.append(smallest_index)
 
         # TO-DO: swap
         # Your code here
@@ -31,11 +40,11 @@ data. The idea behind this algorithm then is that we can create "buckets"
 from 0 up to the max value. This is most easily done by initializing an
 array of 0s whose length is the max value + 1 (why do we need this "+ 1"?).
 
-Each buckets[i] then is responsible for keeping track of how many times 
+Each buckets[i] then is responsible for keeping track of how many times
 we've seen `i` in the input set of data as we iterate through it.
 Once we know exactly how many times each piece of data in the input set
-showed up, we can construct a sorted set of the input data from the 
-buckets. 
+showed up, we can construct a sorted set of the input data from the
+buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
